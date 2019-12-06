@@ -58,7 +58,7 @@
 <meta property="og:site_name" content="chasemyking">
 <meta property="og:description" content="Python 列表(List)序列是Python中最基本的数据结构。序列中的每个元素都分配一个数字 - 它的位置，或索引，第一个索引是0，第二个索引是1，依此类推。创建一个列表，只要把逗号分隔的不同的数据项使用方括号括起来即可。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-12-06T09:10:11.945Z">
+<meta property="og:updated_time" content="2019-12-06T09:45:05.017Z">
 <meta name="twitter:card" content="summary">
 
 <link rel="canonical" href="https://chasemyking.github.io/2019/12/06/%E5%88%97%E8%A1%A8/">
@@ -217,7 +217,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2019-12-06 17:06:55 / 修改时间：17:10:11" itemprop="dateCreated datePublished" datetime="2019-12-06T17:06:55+08:00">2019-12-06</time>
+              <time title="创建时间：2019-12-06 17:06:55 / 修改时间：17:45:05" itemprop="dateCreated datePublished" datetime="2019-12-06T17:06:55+08:00">2019-12-06</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -227,6 +227,12 @@
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/%E5%AD%A6%E4%B9%A0/" itemprop="url" rel="index">
                     <span itemprop="name">学习</span>
+                  </a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%AD%A6%E4%B9%A0/%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index">
+                    <span itemprop="name">笔记</span>
                   </a>
                 </span>
             </span>
@@ -244,7 +250,7 @@
                 <i class="fa fa-file-word-o"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>709</span>
+              <span>1.2k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -303,6 +309,86 @@
 <td>for x in [1, 2, 3]: print x,</td>
 <td>1 2 3</td>
 <td>迭代</td>
+</tr>
+</tbody></table>
+<p>Python列表函数<br>Python包含以下函数:  </p>
+<table>
+<thead>
+<tr>
+<th>序号</th>
+<th>函数</th>
+<th>解释</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td>cmp(list1, list2)比较两个列表的元素</td>
+<td></td>
+</tr>
+<tr>
+<td>2</td>
+<td>len(list)</td>
+<td>列表元素个数</td>
+</tr>
+<tr>
+<td>3</td>
+<td>max(list)</td>
+<td>返回列表元素最大值</td>
+</tr>
+<tr>
+<td>4</td>
+<td>min(list)</td>
+<td>返回列表元素最小值</td>
+</tr>
+<tr>
+<td>5</td>
+<td>list(seq)</td>
+<td>将元组转换为列表</td>
+</tr>
+<tr>
+<td>6</td>
+<td>list.append(obj)</td>
+<td>在列表末尾添加新的对象</td>
+</tr>
+<tr>
+<td>7</td>
+<td>list.count(obj)</td>
+<td>统计某个元素在列表中出现的次数</td>
+</tr>
+<tr>
+<td>8</td>
+<td>list.extend(seq)</td>
+<td>在列表末尾一次性追加另一个序列中的多个值（用新列表扩展原来的列表）</td>
+</tr>
+<tr>
+<td>9</td>
+<td>list.index(obj)</td>
+<td>从列表中找出某个值第一个匹配项的索引位置</td>
+</tr>
+<tr>
+<td>10</td>
+<td>list.insert(index, obj)</td>
+<td>将对象插入列表</td>
+</tr>
+<tr>
+<td>11</td>
+<td>list.pop([index=-1])</td>
+<td>移除列表中的一个元素（默认最后一个元素），并且返回该元素的值</td>
+</tr>
+<tr>
+<td>12</td>
+<td>list.remove(obj)</td>
+<td>移除列表中某个值的第一个匹配项</td>
+</tr>
+<tr>
+<td>13</td>
+<td>list.reverse()</td>
+<td>反向列表中元素</td>
+</tr>
+<tr>
+<td>14</td>
+<td>list.sort(cmp=None, key=None, reverse=False)</td>
+<td>对原列表进行排序</td>
 </tr>
 </tbody></table>
 
@@ -416,7 +502,7 @@
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-count">3</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
@@ -464,12 +550,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-area-chart"></i>
     </span>
-    <span title="站点总字数">34k</span>
+    <span title="站点总字数">36k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">31 分钟</span>
+    <span title="站点阅读时长">32 分钟</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v4.0.0
   </div>
