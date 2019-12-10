@@ -50,15 +50,15 @@
   };
 </script>
 
-  <meta name="description" content="hexo小技巧需要文章字体和颜色和大小如果想要设某一句的颜色或大小，只需用html语法写出即可。 123例：&amp;lt;font color=&quot;FF0000&quot;&amp;gt;我是颜色&amp;lt;&#x2F;font&amp;gt;&amp;lt;font size=6&amp;gt;我是大小&amp;lt;&#x2F;font&amp;gt;&amp;lt;font color=&quot;FF0000&quot; size=6&amp;gt;我是大小和颜色&amp;lt;&#x2F;font&amp;gt; 表格markdown语">
+  <meta name="description" content="hexo小技巧需要文章字体和颜色和大小如果想要设某一句的颜色或大小，只需用html语法写出即可。">
 <meta name="keywords" content="源,hexo">
 <meta property="og:type" content="article">
 <meta property="og:title" content="简单hexo运用">
 <meta property="og:url" content="https:&#x2F;&#x2F;chasemyking.github.io&#x2F;2019&#x2F;12&#x2F;08&#x2F;%E7%AE%80%E5%8D%95hexo%E8%BF%90%E7%94%A8&#x2F;index.html">
 <meta property="og:site_name" content="chasemyking">
-<meta property="og:description" content="hexo小技巧需要文章字体和颜色和大小如果想要设某一句的颜色或大小，只需用html语法写出即可。 123例：&amp;lt;font color=&quot;FF0000&quot;&amp;gt;我是颜色&amp;lt;&#x2F;font&amp;gt;&amp;lt;font size=6&amp;gt;我是大小&amp;lt;&#x2F;font&amp;gt;&amp;lt;font color=&quot;FF0000&quot; size=6&amp;gt;我是大小和颜色&amp;lt;&#x2F;font&amp;gt; 表格markdown语">
+<meta property="og:description" content="hexo小技巧需要文章字体和颜色和大小如果想要设某一句的颜色或大小，只需用html语法写出即可。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-12-08T16:01:48.959Z">
+<meta property="og:updated_time" content="2019-12-10T03:42:04.846Z">
 <meta name="twitter:card" content="summary">
 
 <link rel="canonical" href="https://chasemyking.github.io/2019/12/08/%E7%AE%80%E5%8D%95hexo%E8%BF%90%E7%94%A8/">
@@ -223,7 +223,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-12-09 00:01:48" itemprop="dateModified" datetime="2019-12-09T00:01:48+08:00">2019-12-09</time>
+                <time title="修改时间：2019-12-10 11:42:04" itemprop="dateModified" datetime="2019-12-10T11:42:04+08:00">2019-12-10</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -270,6 +270,7 @@
 
       
         <h1 id="hexo小技巧"><a href="#hexo小技巧" class="headerlink" title="hexo小技巧"></a>hexo小技巧</h1><h2 id="需要"><a href="#需要" class="headerlink" title="需要"></a>需要</h2><h3 id="文章字体和颜色和大小"><a href="#文章字体和颜色和大小" class="headerlink" title="文章字体和颜色和大小"></a>文章字体和颜色和大小</h3><p>如果想要设某一句的颜色或大小，只需用html语法写出即可。</p>
+<a id="more"></a>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">例：<span class="tag">&lt;<span class="name">font</span> <span class="attr">color</span>=<span class="string">"FF0000"</span>&gt;</span>我是颜色<span class="tag">&lt;/<span class="name">font</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">font</span> <span class="attr">size</span>=<span class="string">6</span>&gt;</span>我是大小<span class="tag">&lt;/<span class="name">font</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">font</span> <span class="attr">color</span>=<span class="string">"FF0000"</span> <span class="attr">size</span>=<span class="string">6</span>&gt;</span>我是大小和颜色<span class="tag">&lt;/<span class="name">font</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <h3 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h3><p>markdown语法中，默认的表格样式为每列等分，这样不仅影响美观，还会因为某列过长而把表格挤得变形。<br>解决办法：在文件中添加css样式。</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="css"><span class="selector-tag">table</span> <span class="selector-tag">th</span><span class="selector-pseudo">:nth-of-type(1)</span>&#123;</span></span><br><span class="line">width: 30%;</span><br><span class="line">&#125;</span><br><span class="line"><span class="css"><span class="selector-tag">table</span> <span class="selector-tag">th</span><span class="selector-pseudo">:nth-of-type(2)</span>&#123;</span></span><br><span class="line">width: 30%</span><br><span class="line">;</span><br><span class="line">&#125;</span><br><span class="line"><span class="css"><span class="selector-tag">table</span> <span class="selector-tag">th</span><span class="selector-pseudo">:nth-of-type(3)</span>&#123;</span></span><br><span class="line">width: 30%;</span><br><span class="line">&#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
@@ -368,6 +369,9 @@ width: 30%;
             <span class="post-nav-divider"></span>
 
             <div class="post-nav-prev post-nav-item">
+                <a href="/2019/12/09/%E7%A8%8B%E5%BA%8F%E5%9F%BA%E6%9C%AC%E7%BB%93%E6%9E%84/" rel="prev" title="程序基本结构">
+                  程序基本结构 <i class="fa fa-chevron-right"></i>
+                </a>
             </div>
           </div>
       </footer>
@@ -422,7 +426,7 @@ width: 30%;
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">10</span>
+          <span class="site-state-item-count">11</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -435,7 +439,7 @@ width: 30%;
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">14</span>
+        <span class="site-state-item-count">15</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -477,12 +481,12 @@ width: 30%;
     <span class="post-meta-item-icon">
       <i class="fa fa-area-chart"></i>
     </span>
-    <span title="站点总字数">37k</span>
+    <span title="站点总字数">39k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">33 分钟</span>
+    <span title="站点阅读时长">36 分钟</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v4.0.0
   </div>
