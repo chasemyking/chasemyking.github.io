@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.0.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '7.5.0',
+    exturl: false,
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: '',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    translation: {
+      copy_button: '复制',
+      copy_success: '复制成功',
+      copy_failure: '复制失败'
+    },
+    sidebarPadding: 40
+  };
+</script>
+
+  <meta name="description" content="存储在外部介质上的数据或信息的集合。编码：信息从一种形式或格式转化为另一种形式的过程。常用的编码：ASCLL码：ord（）：将字符转化为ASCLL码chr（）：将ASCLL码转化为字符">
+<meta name="keywords" content="计算机,语言,python,文件">
+<meta property="og:type" content="article">
+<meta property="og:title" content="文件">
+<meta property="og:url" content="https:&#x2F;&#x2F;chasemyking.github.io&#x2F;2019&#x2F;12&#x2F;12&#x2F;%E6%96%87%E4%BB%B6&#x2F;index.html">
+<meta property="og:site_name" content="chasemyking">
+<meta property="og:description" content="存储在外部介质上的数据或信息的集合。编码：信息从一种形式或格式转化为另一种形式的过程。常用的编码：ASCLL码：ord（）：将字符转化为ASCLL码chr（）：将ASCLL码转化为字符">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https:&#x2F;&#x2F;chasemyking.github.io&#x2F;images&#x2F;operate_file.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;chasemyking.github.io&#x2F;images&#x2F;merge_file.png">
+<meta property="og:updated_time" content="2019-12-13T08:10:26.320Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https:&#x2F;&#x2F;chasemyking.github.io&#x2F;images&#x2F;operate_file.png">
+
+<link rel="canonical" href="https://chasemyking.github.io/2019/12/12/%E6%96%87%E4%BB%B6/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true,
+    isPage: false,
+    isArchive: false
+  };
+</script>
+
+  <title>文件 | chasemyking</title>
+  
+
+
+  <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?0e2a4e5bd5a98fcd51a1d8d5405bdfb8";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">chasemyking</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
+
+  </li>
+  </ul>
+
+</nav>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://chasemyking.github.io/2019/12/12/%E6%96%87%E4%BB%B6/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/chasemyking.jpg">
+      <meta itemprop="name" content="chasemyking">
+      <meta itemprop="description" content="我永远喜欢艾斯德斯！">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="chasemyking">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          文件
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2019-12-12 18:49:33" itemprop="dateCreated datePublished" datetime="2019-12-12T18:49:33+08:00">2019-12-12</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2019-12-13 16:10:26" itemprop="dateModified" datetime="2019-12-13T16:10:26+08:00">2019-12-13</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%AD%A6%E4%B9%A0/" itemprop="url" rel="index">
+                    <span itemprop="name">学习</span>
+                  </a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%AD%A6%E4%B9%A0/%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index">
+                    <span itemprop="name">笔记</span>
+                  </a>
+                </span>
+            </span>
+
+          
+            <span id="/2019/12/12/%E6%96%87%E4%BB%B6/" class="post-meta-item leancloud_visitors" data-flag-title="文件" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="leancloud-visitors-count"></span>
+            </span><br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>5.2k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>5 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>存储在外部介质上的数据或信息的集合。<br>编码：信息从一种形式或格式转化为另一种形式的过程。<br>常用的编码：<br>ASCLL码：<br>ord（）：将字符转化为ASCLL码<br>chr（）：将ASCLL码转化为字符  </p>
+<a id="more"></a>
+<p>Unicode：<br>为每种语言中的字符设定统一且唯一的二进制编码。<br>UTF-8编码：<br>可变长度的Unicode。英文对应其中的一个字节，中文等对应其中的三个字节。<br>python中，字符串类型是未编码的。<br>如果需要编码，采用encode(),解码采用decode().<br>例：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">s=<span class="string">"我爱中国！"</span></span><br><span class="line">print(s.encode(<span class="string">"utf-8"</span>))</span><br><span class="line">输出：</span><br><span class="line"><span class="string">b'\xe6\x88\x91\xe7\x88\xb1\xe4\xb8\xad\xe5\x9b\xbd\xef\xbc\x81'</span></span><br><span class="line">其中：我字的编码是-\xe6\x88\x91（utf<span class="number">-8</span>占三字节！）</span><br></pre></td></tr></table></figure>
+<p>GBK编码：针对汉字的编码，双字节编码。<br>例：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">s=<span class="string">"我爱中国！"</span></span><br><span class="line">print(s.encode(<span class="string">"gbk"</span>))</span><br><span class="line">输出：</span><br><span class="line"><span class="string">b'\xce\xd2\xb0\xae\xd6\xd0\xb9\xfa\xa3\xa1'</span></span><br><span class="line">其中：我字的编码是—\xce\xd2</span><br></pre></td></tr></table></figure>
+<p><font color="FF0000">注：python对bytes类型的数据用带b的前缀的单引号或双引号表示。因此在输出的结果中有一个首字母‘b’。</font><br>对文件的操作：<br>1.打开文件：建立磁盘上的文件与程序中的对象相关联。<br>open()<br>格式：<br><variable>=open&lt;name,mode&gt;<br>name=你要打开文件的绝对路径。<br>mode=打开模式。</p>
+<table>
+<thead>
+<tr>
+<th>模式</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>t</td>
+<td>文本模式 (默认)。</td>
+</tr>
+<tr>
+<td>x</td>
+<td>写模式，新建一个文件，如果该文件已存在则会报错。</td>
+</tr>
+<tr>
+<td>b</td>
+<td>二进制模式。</td>
+</tr>
+<tr>
+<td>+</td>
+<td>打开一个文件进行更新(可读可写)。</td>
+</tr>
+<tr>
+<td>U</td>
+<td>通用换行模式（不推荐）。</td>
+</tr>
+<tr>
+<td>r</td>
+<td>以只读方式打开文件。文件不存在则输出错误。文件的指针将会放在文件的开头。这是默认模式。</td>
+</tr>
+<tr>
+<td>rb</td>
+<td>以二进制格式打开一个文件用于只读。文件指针将会放在文件的开头。这是默认模式。一般用于非文本文件如图片等。</td>
+</tr>
+<tr>
+<td>r+</td>
+<td>打开一个文件用于读写。文件指针将会放在文件的开头。</td>
+</tr>
+<tr>
+<td>rb+</td>
+<td>以二进制格式打开一个文件用于读写。文件不存在则输出错误。文件指针将会放在文件的开头。一般用于非文本文件如图片等。</td>
+</tr>
+<tr>
+<td>w</td>
+<td>打开一个文件只用于写入。如果该文件已存在则打开文件，并从开头开始编辑，即原有内容会被删除。如果该文件不存在，创建新文件。</td>
+</tr>
+<tr>
+<td>wb</td>
+<td>以二进制格式打开一个文件只用于写入。如果该文件已存在则打开文件，并从开头开始编辑，即原有内容会被删除。如果该文件不存在，创建新文件。一般用于非文本文件如图片等。</td>
+</tr>
+<tr>
+<td>w+</td>
+<td>打开一个文件用于读写。如果该文件已存在则打开文件，并从开头开始编辑，即原有内容会被删除。如果该文件不存在，创建新文件。</td>
+</tr>
+<tr>
+<td>wb+</td>
+<td>以二进制格式打开一个文件用于读写。如果该文件已存在则打开文件，并从开头开始编辑，即原有内容会被删除。如果该文件不存在，创建新文件。一般用于非文本文件如图片等。</td>
+</tr>
+<tr>
+<td>a</td>
+<td>打开一个文件用于追加。如果该文件已存在，文件指针将会放在文件的结尾。也就是说，新的内容将会被写入到已有内容之后。如果该文件不存在，创建新文件进行写入。</td>
+</tr>
+<tr>
+<td>ab</td>
+<td>以二进制格式打开一个文件用于追加。如果该文件已存在，文件指针将会放在文件的结尾。也就是说，新的内容将会被写入到已有内容之后。如果该文件不存在，创建新文件进行写入。</td>
+</tr>
+<tr>
+<td>a+</td>
+<td>打开一个文件用于读写。如果该文件已存在，文件指针将会放在文件的结尾。文件打开时会是追加模式。如果该文件不存在，创建新文件用于读写。</td>
+</tr>
+<tr>
+<td>ab+</td>
+<td>以二进制格式打开一个文件用于追加。如果该文件已存在，文件指针将会放在文件的结尾。如果该文件不存在，创建新文件用于读写。</td>
+</tr>
+</tbody></table>
+<p>2.文件操作：读取，写入，定位，其它（追加，计算等）</p>
+<style>
+table th:nth-of-type(1){
+width: 30%;
+}
+table th:nth-of-type(2){
+width: 70%;
+}
+</style>
+
+<p>读：</p>
+<table>
+<thead>
+<tr>
+<th>操作名称</th>
+<th>操作含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>read()</td>
+<td>反回值为包含文件内容的一个字符串</td>
+</tr>
+<tr>
+<td>readline()</td>
+<td>返回值为文件下一行内容的字符串</td>
+</tr>
+<tr>
+<td>readlines()</td>
+<td>反回值为文件内容的列表，每项是以换行符为结尾的一个字符串。</td>
+</tr>
+</tbody></table>
+<p>写：</p>
+<table>
+<thead>
+<tr>
+<th>操作名称</th>
+<th>操作含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>write()</td>
+<td>把含有文本数据或二进制数据块的字符串写入文件中</td>
+</tr>
+<tr>
+<td>writelines()</td>
+<td>针对列表操作，接受一个字符串列表作为参数，将它们写入文件，并且行结束符不会被自动加入。</td>
+</tr>
+</tbody></table>
+<p>遍历：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">模板：</span><br><span class="line">file=open(<span class="string">"filename"</span>,<span class="string">"r"</span>)</span><br><span class="line"><span class="keyword">for</span> line <span class="keyword">in</span> file.readline():</span><br><span class="line">    <span class="comment">#实际操作</span></span><br><span class="line">    file.close()</span><br></pre></td></tr></table></figure>
+<p>3.关闭文件：切断文件和程序的联系。将文件缓冲区的数据放入磁盘，并释放文件缓冲区。</p>
+<p>两个实例：<br>（1）读取文件中的数据，绘制动态路径。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> turtle</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">main</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="comment">#设置窗口</span></span><br><span class="line">    turtle.title(<span class="string">'数据驱动的动态路径绘制'</span>)</span><br><span class="line">    turtle.setup(<span class="number">800</span>,<span class="number">600</span>,<span class="number">0</span>,<span class="number">0</span>)</span><br><span class="line">    <span class="comment">#设置画笔</span></span><br><span class="line">    pen=turtle.Turtle()</span><br><span class="line">    pen.color(<span class="string">"red"</span>)</span><br><span class="line">    pen.width(<span class="number">5</span>)</span><br><span class="line">    pen.shape(<span class="string">"turtle"</span>)</span><br><span class="line">    pen.speed(<span class="number">5</span>)</span><br><span class="line">    <span class="comment">#读取文件</span></span><br><span class="line">    result=[]</span><br><span class="line">    <span class="comment">#result.clear()</span></span><br><span class="line">    file=open(<span class="string">"G:\pythonfile\date\date.dat"</span>,<span class="string">"r"</span>)</span><br><span class="line">    <span class="keyword">for</span> line <span class="keyword">in</span> file:</span><br><span class="line">        result.append(list(map(float,line.split(<span class="string">','</span>))))</span><br><span class="line">    print(result)</span><br><span class="line">    <span class="comment">#动态绘制</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(len(result)):</span><br><span class="line">        pen.color((result[i][<span class="number">3</span>],result[i][<span class="number">4</span>],result[i][<span class="number">5</span>]))</span><br><span class="line">        pen.fd(result[i][<span class="number">0</span>])</span><br><span class="line">        <span class="keyword">if</span> result[i][<span class="number">1</span>]:</span><br><span class="line">            pen.rt(result[i][<span class="number">2</span>])</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            pen.lt(result[i][<span class="number">2</span>])</span><br><span class="line">    pen.goto(<span class="number">0</span>,<span class="number">0</span>)</span><br><span class="line"><span class="keyword">if</span> __name__==<span class="string">'__main__'</span>:</span><br><span class="line">    main()</span><br></pre></td></tr></table></figure>
+<p>结果：<br><img src="/images/operate_file.png" width="50%" class="full-image"><br>实例二：读取两个文件，合并</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#利用字符串和列表将两个通讯录文本合并为一个文本</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">main</span><span class="params">()</span>:</span></span><br><span class="line">    ftele1=open(<span class="string">'G:/pythonfile/date/name_tel.txt'</span>,<span class="string">'rb'</span>)</span><br><span class="line">    ftele2=open(<span class="string">'G:/pythonfile/date/name_email.txt'</span>,<span class="string">'rb'</span>)</span><br><span class="line"> </span><br><span class="line">    ftele1.readline()<span class="comment">#跳过第一行</span></span><br><span class="line">    ftele2.readline()</span><br><span class="line">    lines1 = ftele1.readlines()</span><br><span class="line">    lines2 = ftele2.readlines()</span><br><span class="line"> </span><br><span class="line">    list1_name = []  </span><br><span class="line">    list1_tele = []</span><br><span class="line">    list2_name = []  </span><br><span class="line">    list2_email = []</span><br><span class="line"> </span><br><span class="line">    <span class="keyword">for</span> line <span class="keyword">in</span> lines1:<span class="comment">#获取第一个文本中的姓名和电话信息</span></span><br><span class="line">        elements = line.split()</span><br><span class="line">        print(elements)</span><br><span class="line">        list1_name.append(str(elements[<span class="number">0</span>].decode(<span class="string">'gbk'</span>)))</span><br><span class="line">        list1_tele.append(str(elements[<span class="number">1</span>].decode(<span class="string">'gbk'</span>)))    <span class="comment">#将文本读出来的bytes转换为str类型</span></span><br><span class="line">    print(list1_name,list1_tele)</span><br><span class="line">    <span class="keyword">for</span> line <span class="keyword">in</span> lines2:<span class="comment">#获取第二个文本中的姓名和邮件信息</span></span><br><span class="line">        elements = line.split()</span><br><span class="line">        print(elements)</span><br><span class="line">        list2_name.append(str(elements[<span class="number">0</span>].decode(<span class="string">'gbk'</span>)))</span><br><span class="line">        list2_email.append(str(elements[<span class="number">1</span>].decode(<span class="string">'gbk'</span>)))</span><br><span class="line">    print(list2_name,list2_email)</span><br><span class="line"> </span><br><span class="line">    <span class="comment">###开始处理###</span></span><br><span class="line">    lines = []</span><br><span class="line">    lines.append(<span class="string">'姓名\t    电话   \t  邮箱\n'</span>)</span><br><span class="line"> </span><br><span class="line">    <span class="comment">#按索引方式遍历姓名列表1</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(len(list1_name)): </span><br><span class="line">        s= <span class="string">''</span></span><br><span class="line">        <span class="keyword">if</span> list1_name[i] <span class="keyword">in</span> list2_name:</span><br><span class="line">                j = list2_name.index(list1_name[i]) <span class="comment">#找到姓名列表1对应列表2中的姓名索引位置</span></span><br><span class="line">                s = <span class="string">'\t'</span>.join([list1_name[i], list1_tele[i], list2_email[j]])</span><br><span class="line">                s += <span class="string">'\n'</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">                s = <span class="string">'\t'</span>.join([list1_name[i], list1_tele[i], str(<span class="string">'   -----   '</span>)])</span><br><span class="line">                s += <span class="string">'\n'</span></span><br><span class="line">        lines.append(s)</span><br><span class="line">         </span><br><span class="line">    <span class="comment">#处理姓名列表2中剩余的姓名        </span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(len(list2_name)): </span><br><span class="line">        s= <span class="string">''</span></span><br><span class="line">        <span class="keyword">if</span> list2_name[i] <span class="keyword">not</span> <span class="keyword">in</span> list1_name:</span><br><span class="line">                s = <span class="string">'\t'</span>.join([list2_name[i], str(<span class="string">'   -----   '</span>), list2_email[i]])</span><br><span class="line">                s += <span class="string">'\n'</span></span><br><span class="line">        lines.append(s)  </span><br><span class="line"> </span><br><span class="line">    ftele3 = open(<span class="string">'date/AddressBook.txt'</span>, <span class="string">'w'</span>)</span><br><span class="line">    ftele3.writelines(lines)</span><br><span class="line">    ftele3.close()</span><br><span class="line">    ftele1.close()</span><br><span class="line">    ftele2.close()</span><br><span class="line"> </span><br><span class="line">    print(<span class="string">"The addressBooks are merged!"</span>)</span><br><span class="line"> </span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:</span><br><span class="line">    main()</span><br></pre></td></tr></table></figure>
+<p>结果：<br><img src="/images/merge_file.png" width="50%" class="full-image"></p>
+<p><font color="FF0000">注：</font><br>Python中的 .join()<br>这个函数展开来写应该是str.join(item)，join函数是一个字符串操作函数<br>str表示字符串（字符），item表示一个成员<br>举个例子：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&apos;,&apos;.join(&apos;abc&apos;)</span><br></pre></td></tr></table></figure>
+<p>上面代码的含义是“将字符串abc中的每个成员以字符’,’分隔开再拼接成一个字符串”，输出结果为：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&apos;a,b,c&apos;</span><br></pre></td></tr></table></figure>
+<p>index() 方法检测字符串中是否包含子字符串 str ，如果指定 beg（开始） 和 end（结束） 范围，则检查是否包含在指定范围内，<br>index()方法语法：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">str.index(str, beg=0, end=len(string))</span><br></pre></td></tr></table></figure>
+<p>参数<br>str – 指定检索的字符串<br>beg – 开始索引，默认为0。<br>end – 结束索引，默认为字符串的长度。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">str1 = &quot;this is string example....wow!!!&quot;;</span><br><span class="line">str2 = &quot;exam&quot;;</span><br><span class="line"> </span><br><span class="line">print str1.index(str2);</span><br><span class="line">print str1.index(str2, 10);</span><br><span class="line">print str1.index(str2, 40);</span><br><span class="line">以上实例输出结果如下：</span><br><span class="line"></span><br><span class="line">15</span><br><span class="line">15</span><br><span class="line">Traceback (most recent call last):</span><br><span class="line">  File &quot;test.py&quot;, line 8, in </span><br><span class="line">  print str1.index(str2, 40);</span><br><span class="line">ValueError: substring not found</span><br></pre></td></tr></table></figure>
+<p>append() 方法用于在列表末尾添加新的对象。<br>append()方法语法：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">list.append(obj)</span><br></pre></td></tr></table></figure>
+<p>map() 会根据提供的函数对指定序列做映射。<br>map() 函数语法：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">map(function, iterable, ...)</span><br></pre></td></tr></table></figure>
+<p>参数<br>function – 函数<br>iterable – 一个或多个序列  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">实例：</span><br><span class="line">&gt;&gt;&gt;def square(x) :  # 计算平方数</span><br><span class="line">...     return x ** 2</span><br><span class="line">... </span><br><span class="line">&gt;&gt;&gt; map(square, [1,2,3,4,5])   # 计算列表各个元素的平方</span><br><span class="line">[1, 4, 9, 16, 25]</span><br></pre></td></tr></table></figure>
+<p>split() 通过指定分隔符对字符串进行切片<br>split() 方法语法：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">str.split(str=&quot;&quot;, num=string.count(str)).</span><br></pre></td></tr></table></figure>
+<p>参数<br>str – 分隔符，默认为所有的空字符，包括空格、换行(\n)、制表符(\t)等。<br>num – 分割次数。默认为 -1, 即分隔所有。实例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">str = &quot;Line1-abcdef \nLine2-abc \nLine4-abcd&quot;;</span><br><span class="line">print str.split( );       # 以空格为分隔符，包含 \n</span><br><span class="line">print str.split(&apos; &apos;, 1 ); # 以空格为分隔符，分隔成两个</span><br><span class="line"></span><br><span class="line">以上实例输出结果如下：</span><br><span class="line">[&apos;Line1-abcdef&apos;, &apos;Line2-abc&apos;, &apos;Line4-abcd&apos;]</span><br><span class="line">[&apos;Line1-abcdef&apos;,  &apos;\nLine2-abc\nLine4-abcd&apos;]</span><br></pre></td></tr></table></figure>
+    </div>
+
+    
+    
+    
+      
+        <div class="reward-container">
+  <div>这么精彩！不赞一个吗！^_^</div>
+  <button disable="enable" onclick="var qr = document.getElementById(&quot;qr&quot;); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
+    打赏
+  </button>
+  <div id="qr" style="display: none;">
+      
+      <div style="display: inline-block;">
+        <img src="/images/wechatpay.png" alt="chasemyking 微信支付">
+        <p>微信支付</p>
+      </div>
+      
+      <div style="display: inline-block;">
+        <img src="/images/alipay.jpg" alt="chasemyking 支付宝">
+        <p>支付宝</p>
+      </div>
+
+  </div>
+</div>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA/" rel="tag"># 计算机</a>
+              <a href="/tags/%E8%AF%AD%E8%A8%80/" rel="tag"># 语言</a>
+              <a href="/tags/python/" rel="tag"># python</a>
+              <a href="/tags/%E6%96%87%E4%BB%B6/" rel="tag"># 文件</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-next post-nav-item">
+                <a href="/2019/12/10/%E5%87%BD%E6%95%B0/" rel="next" title="函数">
+                  <i class="fa fa-chevron-left"></i> 函数
+                </a>
+            </div>
+
+            <span class="post-nav-divider"></span>
+
+            <div class="post-nav-prev post-nav-item">
+            </div>
+          </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <img class="site-author-image" itemprop="image" alt="chasemyking"
+    src="/images/chasemyking.jpg">
+  <p class="site-author-name" itemprop="name">chasemyking</p>
+  <div class="site-description" itemprop="description">我永远喜欢艾斯德斯！</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">13</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">17</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/chasemyking/chasemyking.github.io" title="GitHub &amp;rarr; https:&#x2F;&#x2F;github.com&#x2F;chasemyking&#x2F;chasemyking.github.io" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/mailto:cangtiandadi2016@outlook.com" title="E-Mail &amp;rarr; mailto:cangtiandadi2016@outlook.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">chasemyking</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    <span title="站点总字数">45k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">41 分钟</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v4.0.0
+  </div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">主题 – <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v7.5.0
+  </div>
+
+        
+
+
+
+
+
+
+  <script>
+  function leancloudSelector(url) {
+    return document.getElementById(url).querySelector('.leancloud-visitors-count');
+  }
+  if (CONFIG.page.isPost) {
+    function addCount(Counter) {
+      var visitors = document.querySelector('.leancloud_visitors');
+      var url = visitors.getAttribute('id').trim();
+      var title = visitors.getAttribute('data-flag-title').trim();
+
+      Counter('get', `/classes/Counter?where=${JSON.stringify({ url })}`)
+        .then(response => response.json())
+        .then(({ results }) => {
+          if (results.length > 0) {
+            var counter = results[0];
+            Counter('put', '/classes/Counter/' + counter.objectId, { time: { '__op': 'Increment', 'amount': 1 } })
+              .then(response => response.json())
+              .then(() => {
+                leancloudSelector(url).innerText = counter.time + 1;
+              })
+              .catch(error => {
+                console.log('Failed to save visitor count', error);
+              })
+          } else {
+              leancloudSelector(url).innerText = 'Counter not initialized! More info at console err msg.';
+              console.error('ATTENTION! LeanCloud counter has security bug, see how to solve it here: https://github.com/theme-next/hexo-leancloud-counter-security. \n However, you can still use LeanCloud without security, by setting `security` option to `false`.');
+            
+          }
+        })
+        .catch(error => {
+          console.log('LeanCloud Counter Error', error);
+        });
+    }
+  } else {
+    function showTime(Counter) {
+      var visitors = document.querySelectorAll('.leancloud_visitors');
+      var entries = [...visitors].map(element => {
+        return element.getAttribute('id').trim();
+      });
+
+      Counter('get', `/classes/Counter?where=${JSON.stringify({ url: { '$in': entries } })}`)
+        .then(response => response.json())
+        .then(({ results }) => {
+          if (results.length === 0) {
+            document.querySelectorAll('.leancloud_visitors .leancloud-visitors-count').forEach(element => {
+              element.innerText = 0;
+            });
+            return;
+          }
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.url;
+            var time = item.time;
+            leancloudSelector(url).innerText = time;
+          }
+          for (var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = leancloudSelector(url);
+            if (element.innerText == '') {
+              element.innerText = 0;
+            }
+          }
+        })
+        .catch(error => {
+          console.log('LeanCloud Counter Error', error);
+        });
+    }
+  }
+
+  fetch('https://app-router.leancloud.cn/2/route?appId=F1yOARDU4POU2Iuir3vgWVrB-gzGzoHsz')
+    .then(response => response.json())
+    .then(({ api_server }) => {
+      var Counter = (method, url, data) => {
+        return fetch(`https://${api_server}/1.1${url}`, {
+          method: method,
+          headers: {
+            'X-LC-Id': 'F1yOARDU4POU2Iuir3vgWVrB-gzGzoHsz',
+            'X-LC-Key': 'ADyvs9fVUxLnHglgfNMBDNlr',
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(data)
+        });
+      };
+      if (CONFIG.page.isPost) {
+        const localhost = /http:\/\/(localhost|127.0.0.1|0.0.0.0)/;
+        if (localhost.test(document.URL)) return;
+        addCount(Counter);
+      } else if (document.querySelectorAll('.post-title-link').length >= 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+<script src="/js/utils.js"></script><script src="/js/motion.js"></script>
+<script src="/js/schemes/pisces.js"></script>
+<script src="/js/next-boot.js"></script>
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/assets/miku.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true},"react":{"opacity":0.7},"log":false});</script></body>
+</html>
