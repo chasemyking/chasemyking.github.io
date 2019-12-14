@@ -59,7 +59,7 @@
 <meta property="og:description" content="Turtle库是Python语言中一个很流行的绘制图像的函数库，想象一个小乌龟，在一个横轴为x、纵轴为y的坐标系原点，(0,0)位置开始，它根据一组函数指令的控制，在这个平面坐标系中移动，从而在它爬行的路径上绘制了图形。">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https:&#x2F;&#x2F;chasemyking.github.io&#x2F;images&#x2F;turtle蛇.png">
-<meta property="og:updated_time" content="2019-12-06T09:38:11.345Z">
+<meta property="og:updated_time" content="2019-12-14T15:19:06.403Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https:&#x2F;&#x2F;chasemyking.github.io&#x2F;images&#x2F;turtle蛇.png">
 
@@ -225,7 +225,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-12-06 17:38:11" itemprop="dateModified" datetime="2019-12-06T17:38:11+08:00">2019-12-06</time>
+                <time title="修改时间：2019-12-14 23:19:06" itemprop="dateModified" datetime="2019-12-14T23:19:06+08:00">2019-12-14</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -258,7 +258,7 @@
                 <i class="fa fa-file-word-o"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>2.4k</span>
+              <span>2.7k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -415,7 +415,13 @@
 <td>复制当前图形</td>
 </tr>
 </tbody></table>
-<p>turtle.write(s[,font=(“font-name”,font_size,”font_type”)]) 写文本，s为文本内容，font是字体的参数，里面分别为字体名称，大小和类型；font为可选项, font的参数也是可选项</p>
+<p>turtle.write（arg，move = False，align =“ left”，font =（“ Arial”，8，“ normal”））<br>参量<br>arg –要写入TurtleScreen的对象</p>
+<p>移动 –正确/错误</p>
+<p>align –字符串“ left”，“ center”或“ right”之一</p>
+<p>字体 –三元组（字体名称，字体大小，字体类型）</p>
+<p>根据对齐（“左”，“中心”或“右”）并使用给定的字体，在当前乌龟位置写文本-arg的字符串表示形式。如果move为true，则笔将移动到文本的右下角。默认情况下，move为。False</p>
+<p>turtle.begin_fill（）<br>在绘制要填充的形状之前调用。等同于fill(True)。</p>
+<p>turtle.end_fill（）<br>填写最后一次调用后绘制的形状begin_fill()。等同于fill(False)。<br><font color="FF0000"><br>想要了解更多，点这里：<br><a href="https://docs.python.org/2/library/turtle.html#introduction" target="_blank" rel="noopener">详细解释</a><br></font></p>
 <p>例子：python蛇<br> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"> import turtle #轨迹</span><br><span class="line">def drawSanke(rad,angle,len,neckrad):  </span><br><span class="line">    for i in range(len):  </span><br><span class="line">        turtle.circle(rad,angle)#爬行轨迹为圆，rad为半径的距离，angle为爬行弧度  </span><br><span class="line">        turtle.circle(-rad,angle)  </span><br><span class="line">    turtle.circle(rad,angle/2)  </span><br><span class="line">    turtle.fd(rad)#也可称为turtle.forwad()，表示向前直线爬行rad  </span><br><span class="line">    turtle.circle(neckrad+1,180)  </span><br><span class="line">    turtle.fd(rad*2/3)  </span><br><span class="line">def main():  </span><br><span class="line">    turtle.setup(1300,800,0,0)#图形窗口  </span><br><span class="line">    pythonsize = 30  </span><br><span class="line">    turtle.pensize(pythonsize)#运行轨迹的宽度  </span><br><span class="line">    turtle.pencolor(&quot;blue&quot;)#轨迹的颜色  </span><br><span class="line">    turtle.seth(-40)#方向  </span><br><span class="line">    drawSanke(40,80,5,pythonsize/2)  </span><br><span class="line">main()</span><br></pre></td></tr></table></figure><br>图：<br><img src="/images/turtle蛇.png" class="full-image" /></p>
 
     </div>
@@ -521,7 +527,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">13</span>
+          <span class="site-state-item-count">14</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -534,7 +540,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">17</span>
+        <span class="site-state-item-count">18</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -576,12 +582,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-area-chart"></i>
     </span>
-    <span title="站点总字数">45k</span>
+    <span title="站点总字数">49k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">41 分钟</span>
+    <span title="站点阅读时长">45 分钟</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v4.0.0
   </div>

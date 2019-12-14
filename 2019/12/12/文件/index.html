@@ -50,17 +50,17 @@
   };
 </script>
 
-  <meta name="description" content="存储在外部介质上的数据或信息的集合。编码：信息从一种形式或格式转化为另一种形式的过程。常用的编码：ASCLL码：ord（）：将字符转化为ASCLL码chr（）：将ASCLL码转化为字符">
+  <meta name="description" content="文件：存储在外部介质上的数据或信息的集合。编码：信息从一种形式或格式转化为另一种形式的过程。常用的编码：ASCLL码：ord（）：将字符转化为ASCLL码chr（）：将ASCLL码转化为字符">
 <meta name="keywords" content="计算机,语言,python,文件">
 <meta property="og:type" content="article">
 <meta property="og:title" content="文件">
 <meta property="og:url" content="https:&#x2F;&#x2F;chasemyking.github.io&#x2F;2019&#x2F;12&#x2F;12&#x2F;%E6%96%87%E4%BB%B6&#x2F;index.html">
 <meta property="og:site_name" content="chasemyking">
-<meta property="og:description" content="存储在外部介质上的数据或信息的集合。编码：信息从一种形式或格式转化为另一种形式的过程。常用的编码：ASCLL码：ord（）：将字符转化为ASCLL码chr（）：将ASCLL码转化为字符">
+<meta property="og:description" content="文件：存储在外部介质上的数据或信息的集合。编码：信息从一种形式或格式转化为另一种形式的过程。常用的编码：ASCLL码：ord（）：将字符转化为ASCLL码chr（）：将ASCLL码转化为字符">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https:&#x2F;&#x2F;chasemyking.github.io&#x2F;images&#x2F;operate_file.png">
 <meta property="og:image" content="https:&#x2F;&#x2F;chasemyking.github.io&#x2F;images&#x2F;merge_file.png">
-<meta property="og:updated_time" content="2019-12-13T08:10:26.320Z">
+<meta property="og:updated_time" content="2019-12-13T08:16:11.558Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https:&#x2F;&#x2F;chasemyking.github.io&#x2F;images&#x2F;operate_file.png">
 
@@ -226,7 +226,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-12-13 16:10:26" itemprop="dateModified" datetime="2019-12-13T16:10:26+08:00">2019-12-13</time>
+                <time title="修改时间：2019-12-13 16:16:11" itemprop="dateModified" datetime="2019-12-13T16:16:11+08:00">2019-12-13</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -259,7 +259,7 @@
                 <i class="fa fa-file-word-o"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>5.2k</span>
+              <span>5.3k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -278,7 +278,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>存储在外部介质上的数据或信息的集合。<br>编码：信息从一种形式或格式转化为另一种形式的过程。<br>常用的编码：<br>ASCLL码：<br>ord（）：将字符转化为ASCLL码<br>chr（）：将ASCLL码转化为字符  </p>
+        <p>文件：存储在外部介质上的数据或信息的集合。<br>编码：信息从一种形式或格式转化为另一种形式的过程。<br>常用的编码：<br>ASCLL码：<br>ord（）：将字符转化为ASCLL码<br>chr（）：将ASCLL码转化为字符  </p>
 <a id="more"></a>
 <p>Unicode：<br>为每种语言中的字符设定统一且唯一的二进制编码。<br>UTF-8编码：<br>可变长度的Unicode。英文对应其中的一个字节，中文等对应其中的三个字节。<br>python中，字符串类型是未编码的。<br>如果需要编码，采用encode(),解码采用decode().<br>例：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">s=<span class="string">"我爱中国！"</span></span><br><span class="line">print(s.encode(<span class="string">"utf-8"</span>))</span><br><span class="line">输出：</span><br><span class="line"><span class="string">b'\xe6\x88\x91\xe7\x88\xb1\xe4\xb8\xad\xe5\x9b\xbd\xef\xbc\x81'</span></span><br><span class="line">其中：我字的编码是-\xe6\x88\x91（utf<span class="number">-8</span>占三字节！）</span><br></pre></td></tr></table></figure>
@@ -414,10 +414,13 @@ width: 70%;
 <p>3.关闭文件：切断文件和程序的联系。将文件缓冲区的数据放入磁盘，并释放文件缓冲区。</p>
 <p>两个实例：<br>（1）读取文件中的数据，绘制动态路径。</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> turtle</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">main</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="comment">#设置窗口</span></span><br><span class="line">    turtle.title(<span class="string">'数据驱动的动态路径绘制'</span>)</span><br><span class="line">    turtle.setup(<span class="number">800</span>,<span class="number">600</span>,<span class="number">0</span>,<span class="number">0</span>)</span><br><span class="line">    <span class="comment">#设置画笔</span></span><br><span class="line">    pen=turtle.Turtle()</span><br><span class="line">    pen.color(<span class="string">"red"</span>)</span><br><span class="line">    pen.width(<span class="number">5</span>)</span><br><span class="line">    pen.shape(<span class="string">"turtle"</span>)</span><br><span class="line">    pen.speed(<span class="number">5</span>)</span><br><span class="line">    <span class="comment">#读取文件</span></span><br><span class="line">    result=[]</span><br><span class="line">    <span class="comment">#result.clear()</span></span><br><span class="line">    file=open(<span class="string">"G:\pythonfile\date\date.dat"</span>,<span class="string">"r"</span>)</span><br><span class="line">    <span class="keyword">for</span> line <span class="keyword">in</span> file:</span><br><span class="line">        result.append(list(map(float,line.split(<span class="string">','</span>))))</span><br><span class="line">    print(result)</span><br><span class="line">    <span class="comment">#动态绘制</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(len(result)):</span><br><span class="line">        pen.color((result[i][<span class="number">3</span>],result[i][<span class="number">4</span>],result[i][<span class="number">5</span>]))</span><br><span class="line">        pen.fd(result[i][<span class="number">0</span>])</span><br><span class="line">        <span class="keyword">if</span> result[i][<span class="number">1</span>]:</span><br><span class="line">            pen.rt(result[i][<span class="number">2</span>])</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            pen.lt(result[i][<span class="number">2</span>])</span><br><span class="line">    pen.goto(<span class="number">0</span>,<span class="number">0</span>)</span><br><span class="line"><span class="keyword">if</span> __name__==<span class="string">'__main__'</span>:</span><br><span class="line">    main()</span><br></pre></td></tr></table></figure>
-<p>结果：<br><img src="/images/operate_file.png" width="50%" class="full-image"><br>实例二：读取两个文件，合并</p>
+<p>结果：<br><img src="/images/operate_file.png" width="100%" class="full-image"></p>
+<p>实例二：读取两个文件，合并</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#利用字符串和列表将两个通讯录文本合并为一个文本</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">main</span><span class="params">()</span>:</span></span><br><span class="line">    ftele1=open(<span class="string">'G:/pythonfile/date/name_tel.txt'</span>,<span class="string">'rb'</span>)</span><br><span class="line">    ftele2=open(<span class="string">'G:/pythonfile/date/name_email.txt'</span>,<span class="string">'rb'</span>)</span><br><span class="line"> </span><br><span class="line">    ftele1.readline()<span class="comment">#跳过第一行</span></span><br><span class="line">    ftele2.readline()</span><br><span class="line">    lines1 = ftele1.readlines()</span><br><span class="line">    lines2 = ftele2.readlines()</span><br><span class="line"> </span><br><span class="line">    list1_name = []  </span><br><span class="line">    list1_tele = []</span><br><span class="line">    list2_name = []  </span><br><span class="line">    list2_email = []</span><br><span class="line"> </span><br><span class="line">    <span class="keyword">for</span> line <span class="keyword">in</span> lines1:<span class="comment">#获取第一个文本中的姓名和电话信息</span></span><br><span class="line">        elements = line.split()</span><br><span class="line">        print(elements)</span><br><span class="line">        list1_name.append(str(elements[<span class="number">0</span>].decode(<span class="string">'gbk'</span>)))</span><br><span class="line">        list1_tele.append(str(elements[<span class="number">1</span>].decode(<span class="string">'gbk'</span>)))    <span class="comment">#将文本读出来的bytes转换为str类型</span></span><br><span class="line">    print(list1_name,list1_tele)</span><br><span class="line">    <span class="keyword">for</span> line <span class="keyword">in</span> lines2:<span class="comment">#获取第二个文本中的姓名和邮件信息</span></span><br><span class="line">        elements = line.split()</span><br><span class="line">        print(elements)</span><br><span class="line">        list2_name.append(str(elements[<span class="number">0</span>].decode(<span class="string">'gbk'</span>)))</span><br><span class="line">        list2_email.append(str(elements[<span class="number">1</span>].decode(<span class="string">'gbk'</span>)))</span><br><span class="line">    print(list2_name,list2_email)</span><br><span class="line"> </span><br><span class="line">    <span class="comment">###开始处理###</span></span><br><span class="line">    lines = []</span><br><span class="line">    lines.append(<span class="string">'姓名\t    电话   \t  邮箱\n'</span>)</span><br><span class="line"> </span><br><span class="line">    <span class="comment">#按索引方式遍历姓名列表1</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(len(list1_name)): </span><br><span class="line">        s= <span class="string">''</span></span><br><span class="line">        <span class="keyword">if</span> list1_name[i] <span class="keyword">in</span> list2_name:</span><br><span class="line">                j = list2_name.index(list1_name[i]) <span class="comment">#找到姓名列表1对应列表2中的姓名索引位置</span></span><br><span class="line">                s = <span class="string">'\t'</span>.join([list1_name[i], list1_tele[i], list2_email[j]])</span><br><span class="line">                s += <span class="string">'\n'</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">                s = <span class="string">'\t'</span>.join([list1_name[i], list1_tele[i], str(<span class="string">'   -----   '</span>)])</span><br><span class="line">                s += <span class="string">'\n'</span></span><br><span class="line">        lines.append(s)</span><br><span class="line">         </span><br><span class="line">    <span class="comment">#处理姓名列表2中剩余的姓名        </span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(len(list2_name)): </span><br><span class="line">        s= <span class="string">''</span></span><br><span class="line">        <span class="keyword">if</span> list2_name[i] <span class="keyword">not</span> <span class="keyword">in</span> list1_name:</span><br><span class="line">                s = <span class="string">'\t'</span>.join([list2_name[i], str(<span class="string">'   -----   '</span>), list2_email[i]])</span><br><span class="line">                s += <span class="string">'\n'</span></span><br><span class="line">        lines.append(s)  </span><br><span class="line"> </span><br><span class="line">    ftele3 = open(<span class="string">'date/AddressBook.txt'</span>, <span class="string">'w'</span>)</span><br><span class="line">    ftele3.writelines(lines)</span><br><span class="line">    ftele3.close()</span><br><span class="line">    ftele1.close()</span><br><span class="line">    ftele2.close()</span><br><span class="line"> </span><br><span class="line">    print(<span class="string">"The addressBooks are merged!"</span>)</span><br><span class="line"> </span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:</span><br><span class="line">    main()</span><br></pre></td></tr></table></figure>
-<p>结果：<br><img src="/images/merge_file.png" width="50%" class="full-image"></p>
-<p><font color="FF0000">注：</font><br>Python中的 .join()<br>这个函数展开来写应该是str.join(item)，join函数是一个字符串操作函数<br>str表示字符串（字符），item表示一个成员<br>举个例子：</p>
+
+<p>结果：<br><img src="/images/merge_file.png" width="100%" class="full-image"></p>
+<p><font color="FF0000">注：</font>    </p>
+<p>Python中的 .join()<br>这个函数展开来写应该是str.join(item)，join函数是一个字符串操作函数<br>str表示字符串（字符），item表示一个成员<br>举个例子：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&apos;,&apos;.join(&apos;abc&apos;)</span><br></pre></td></tr></table></figure>
 <p>上面代码的含义是“将字符串abc中的每个成员以字符’,’分隔开再拼接成一个字符串”，输出结果为：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&apos;a,b,c&apos;</span><br></pre></td></tr></table></figure>
@@ -482,6 +485,9 @@ width: 70%;
             <span class="post-nav-divider"></span>
 
             <div class="post-nav-prev post-nav-item">
+                <a href="/2019/12/13/%E5%AD%97%E5%85%B8/" rel="prev" title="字典">
+                  字典 <i class="fa fa-chevron-right"></i>
+                </a>
             </div>
           </div>
       </footer>
@@ -535,7 +541,7 @@ width: 70%;
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">13</span>
+          <span class="site-state-item-count">14</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -548,7 +554,7 @@ width: 70%;
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">17</span>
+        <span class="site-state-item-count">18</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -590,12 +596,12 @@ width: 70%;
     <span class="post-meta-item-icon">
       <i class="fa fa-area-chart"></i>
     </span>
-    <span title="站点总字数">45k</span>
+    <span title="站点总字数">49k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">41 分钟</span>
+    <span title="站点阅读时长">45 分钟</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v4.0.0
   </div>
